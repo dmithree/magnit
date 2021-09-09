@@ -1,0 +1,123 @@
+import React from 'react'
+import styled from 'styled-components'
+import { Absolute, Card, Flag, Image, Relative, Text } from '..'
+import { Close as CloseIcon } from 'pcln-icons'
+
+const TallCard = styled(Card)`
+  height: 420px;
+`
+
+const SmallAbsolute = styled(Absolute)`
+  height: 100px;
+`
+
+const MediumAbsolute = styled(Absolute)`
+  height: 200px;
+`
+
+const LargeAbsolute = styled(Absolute)`
+  height: 300px;
+`
+
+const ExtraLargeAbsolute = styled(Absolute)`
+  height: 400px;
+`
+
+export default {
+  title: 'Absolute',
+  component: Absolute,
+}
+
+export const OverAnImage = () => (
+  <Relative width={1 / 2}>
+    <Absolute top={8} left={0}>
+      <Flag>Hello Flag</Flag>
+    </Absolute>
+    <Image src='https://www.goodfreephotos.com/albums/new-zealand/other-new-zealand/lake-pukaki-and-mount-cook-in-the-background.jpg' />
+  </Relative>
+)
+
+OverAnImage.story = {
+  name: 'Over an image',
+}
+
+export const PositioningAnIcon = () => (
+  <Card m={2}>
+    <Relative p={4}>
+      <Text mt={2} textAlign='justify'>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et nisl
+        dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+        quis nisi ac est elementum consequat a eu risus. Phasellus id facilisis
+        nulla. Aliquam vel semper enim, id lobortis dolor. Morbi sed leo at
+        turpis rutrum posuere. Nullam tincidunt ex vitae mi sagittis, vel
+        sollicitudin lectus viverra. Curabitur sit amet fringilla velit.
+      </Text>
+      <Absolute top='10px' right='10px'>
+        <CloseIcon color='text.base' size={24} />
+      </Absolute>
+    </Relative>
+  </Card>
+)
+
+PositioningAnIcon.story = {
+  name: 'Positioning an icon',
+}
+
+export const MultipleAbsolutelyPositionedBoxes = () => (
+  <TallCard pb={3}>
+    <Relative p={3}>
+      <ExtraLargeAbsolute
+        pl={2}
+        top={0}
+        right={0}
+        zIndex={1}
+        width={400}
+        bg='#085397'
+      >
+        <Text.span fontSize={1} bold>
+          z-index 1
+        </Text.span>
+      </ExtraLargeAbsolute>
+      <LargeAbsolute
+        pl={2}
+        top={0}
+        right={0}
+        zIndex={2}
+        width={300}
+        bg='#f2633a'
+      >
+        <Text.span fontSize={1} bold>
+          z-index 2
+        </Text.span>
+      </LargeAbsolute>
+      <MediumAbsolute
+        pl={2}
+        top={0}
+        right={0}
+        zIndex={3}
+        width={200}
+        bg='#0a84c1'
+      >
+        <Text.span fontSize={1} bold>
+          z-index 3
+        </Text.span>
+      </MediumAbsolute>
+      <SmallAbsolute
+        pl={2}
+        top={0}
+        right={0}
+        zIndex='4'
+        width={100}
+        bg='#3c910e'
+      >
+        <Text.span fontSize={1} bold>
+          z-index 4
+        </Text.span>
+      </SmallAbsolute>
+    </Relative>
+  </TallCard>
+)
+
+MultipleAbsolutelyPositionedBoxes.story = {
+  name: 'Multiple absolutely positioned boxes',
+}
