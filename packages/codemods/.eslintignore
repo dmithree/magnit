@@ -1,8 +1,0 @@
-**/.rush/*
-**/node_modules/*
-
-**/coverage/*
-
-**/dist/*
-
-bin/__tests__/*
