@@ -1,0 +1,111 @@
+@use './fonts/code';
+@use '~spectre-foundations/scss/variables/code' as variables;
+
+$white: #ffffff;
+$black: #121212;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Golos Text Web';
+  color: #001833;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: variables.$font-b;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.button {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 16px;
+  &-default {
+    color: $white;
+    background: $black;
+  }
+}
+
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+  font-family: "Roboto Mono", Menlo, monospace;
+  font-size: 14px;
+  padding: 16px;
+  color: rgb(0, 104, 239);
+  background-color: rgb(244, 246, 248);
+  border-radius: 2px;
+}
+
+.sidebar {
+  background-color: #fff;;
+  width: 256px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  &-inner {
+    padding: 32px 32px 32px;
+    & ul {
+      & li {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.page {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 0 256px;
+  &-container {
+    padding: 0 0 0 64px;
+  }
+  &-content {
+    padding: 32px 32px 128px 64px;
+    max-width: 65%;
+    line-height: 1.5;
+    margin: 0 auto;
+    &__title {
+      margin: 48px 0 16px 0;
+    }
+    &__description {
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0 0 16px 0;
+    }
+    & p {
+      padding: 0 0 16px 0;
+    }
+  }
+}
+
+.colors-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: 15px;
+  row-gap: 20px;
+  padding: 16px 16px 32px 0px;
+}
